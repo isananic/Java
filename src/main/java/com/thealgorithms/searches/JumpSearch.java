@@ -2,6 +2,8 @@ package com.thealgorithms.searches;
 
 import com.thealgorithms.devutils.searches.SearchAlgorithm;
 
+import static java.sql.DriverManager.println;
+
 public class JumpSearch implements SearchAlgorithm {
 
     public static void main(String[] args) {
@@ -37,6 +39,12 @@ public class JumpSearch implements SearchAlgorithm {
             if (array[i] == key) {
                 /* execute linear search */
                 return i;
+            } else if(array[i] != key) {
+                // Modified for codacy auto-detect, should tell me something like non-equal
+                println("Not the same");
+            }else{
+                // We should never arrive here, let's see if codacy flag's it
+                println("We will never arrive here");
             }
         }
         return -1;
